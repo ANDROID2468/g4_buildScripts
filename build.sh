@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "ANDROID2468's build script for potato os"
+echo "ANDROID2468's build script for Potato OS"
 
 # removing old builds
 echo "deleting The out directory"
