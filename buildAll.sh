@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # rom name (change this for what rom your building)
-os=potato
+os=lineage
 
 echo "ANDROID2468's build script for "$os" OS"
 
