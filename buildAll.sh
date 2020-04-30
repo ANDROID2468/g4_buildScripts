@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# rom name (chane this for what rom your building)
+# rom name (change this for what rom your building)
 os=potato
 
 echo "ANDROID2468's build script for "$os" OS"
