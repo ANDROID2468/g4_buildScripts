@@ -1,5 +1,9 @@
 #!/bin/bash
-echo "ANDROID2468's build script for Potato OS"
+
+# rom name (chane this for what rom your building)
+os=potato
+
+echo "ANDROID2468's build script for "$os" OS"
 
 # Functions 
 
@@ -22,9 +26,11 @@ arb_2 () {
 # cleans the build env after each  build
 clean_build () {
     echo "cleaning up the build environment"
+    prebuilts/misc/linux-x86/ccache/ccache -C
+    prebuilts/misc/linux-x86/ccache/ccache -M 50G
     cp out/target/product/$1 Roms/$1 | tee -a log_$1.txt
     rm -rf out | tee -a log_$1.txt
-    echo "The rom for $1 is in the Roms folder " | tee -a log_$1.txt
+    echo "The rom, "$os" OS for $1 is in the Roms folder " | tee -a log_$1.txt
 }
 
 
@@ -48,22 +54,22 @@ rm -f log_h810_usu.txt
 
 # vs986_usu
 echo "starting build for vs986_usu" | tee -a log_vs986_usu.txt
-breakfast potato_vs986_usu-userdebug | tee -a log_vs986_usu.txt
-brunch potato_vs986_usu-userdebug | tee -a log_vs986_usu.txt
+breakfast "$os"_vs986_usu-userdebug | tee -a log_vs986_usu.txt
+brunch "$os"_vs986_usu-userdebug | tee -a log_vs986_usu.txt
 arb_2 vs986_usu
 clean_build vs986_usu
 
 # h810_usu
 echo "starting build for h810_usu" | tee -a log_h810_usu.txt
-breakfast potato_h810_usu-userdebug | tee -a log_h810_usu.txt
-brunch potato_h810_usu-userdebug | tee -a log_h810_usu.txt
+breakfast "$os"_h810_usu-userdebug | tee -a log_h810_usu.txt
+brunch "$os"_h810_usu-userdebug | tee -a log_h810_usu.txt
 arb_2 h810_usu
 clean_build h810_usu
 
 # h811
 echo "starting build for h811" | tee -a log_h811.txt
-breakfast potato_h811-userdebug | tee -a log_h811.txt
-brunch potato_h811-userdebug | tee -a log_h811.txt
+breakfast "$os"_h811-userdebug | tee -a log_h811.txt
+brunch "$os"_h811-userdebug | tee -a log_h811.txt
 arb_2 h811
 clean_build h811
 
@@ -73,22 +79,22 @@ sleep 30m
 
 # h812_usu
 echo "starting build for h812" | tee -a log_h812_usu.txt
-breakfast potato_h812_usu-userdebug | tee -a log_h812_usu.txt
-brunch potato_h812_usu-userdebug | tee -a log_h812_usu.txt
+breakfast "$os"_h812_usu-userdebug | tee -a log_h812_usu.txt
+brunch "$os"_h812_usu-userdebug | tee -a log_h812_usu.txt
 arb_2 h812_usu
 clean_build h812_usu
 
 # h815
 echo "starting build for h815" | tee -a log_h815.txt
-breakfast potato_h815-userdebug | tee -a log_h815.txt
-brunch potato_h815-userdebug | tee -a log_h815.txt
+breakfast "$os"_h815-userdebug | tee -a log_h815.txt
+brunch "$os"_h815-userdebug | tee -a log_h815.txt
 arb_0 h815
 clean_build h815
 
 # h815_usu
 echo "starting build for h815_usu" | tee -a log_h815_usu.txt
-breakfast potato_h815_usu-userdebug | tee -a log_h815_usu.txt
-brunch potato_h815_usu-userdebug | tee -a log_h815_usu.txt
+breakfast "$os"_h815_usu-userdebug | tee -a log_h815_usu.txt
+brunch "$os"_h815_usu-userdebug | tee -a log_h815_usu.txt
 arb_0 h815_usu
 clean_build h815_usu
 
