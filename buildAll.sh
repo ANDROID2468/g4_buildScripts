@@ -26,6 +26,8 @@ arb_2 () {
 # cleans the build env after each  build
 clean_build () {
     echo "cleaning up the build environment"
+    prebuilts/misc/linux-x86/ccache/ccache -C
+    prebuilts/misc/linux-x86/ccache/ccache -M 50G
     cp -r out/target/product/$1 Roms/$1 | tee -a log_$1.txt
     if [[ -f Rom/$1 ]]; then
     	rm -rf out 
