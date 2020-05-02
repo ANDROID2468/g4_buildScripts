@@ -29,7 +29,7 @@ clean_build () {
     prebuilts/misc/linux-x86/ccache/ccache -C
     prebuilts/misc/linux-x86/ccache/ccache -M 50G
     cp -r out/target/product/$1 Roms/$1 | tee -a log_$1.txt
-    if [[ -d Rom/$1 ]]; then
+    if [[ -d Roms/$1 ]]; then
     	rm -rf out 
     	echo "The rom for $1 is in the Roms folder " | tee -a log_$1.txt
     fi
